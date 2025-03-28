@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chute</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="imagenes/logo.png" alt="Logo de Chute" />
+    </div>
+    <form action="resultados-busqueda.html" method="GET" class="formulario-busqueda">
+      <input type="text" name="q" placeholder="Buscar..." />
+      <button type="submit">Buscar</button>
+    </form>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="generos-peliculas.html">Géneros de Películas</a></li>
+        <li><a href="generos-series.html">Géneros de Series</a></li>
+        <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Películas Populares</h2>
+      <div class="contenedor-tarjetas">
+        <article class="tarjeta">
+          <a href="detalle-pelicula.html">
+            <img src="imagenes/pelicula1.jpg" alt="Película 1"/>
+            <h3>Título de Película 1</h3>
+            <p>Fecha de estreno: YYYY-DD-MM</p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Series Más Vistas</h2>
+      <div class="contenedor-tarjetas">
+        <article class="tarjeta">
+          <a href="detalle-serie.html">
+            <img src="imagenes/serie1.jpg" alt="Serie 1"/>
+            <h3>Nombre de Serie 1</h3>
+            <p>Fecha de estreno: YYYY-DD-MM</p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Películas Mejor Valoradas</h2>
+      <div class="contenedor-tarjetas">
+        <article class="tarjeta">
+          <a href="detalle-pelicula.html">
+            <img src="imagenes/pelicula2.jpg" alt="Película 2"/>
+            <h3>Título de Película 2</h3>
+            <p>Fecha de estreno: YYYY-DD-MM</p>
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Integrantes del equipo</strong>: Joaquín Celentano, Ethan Hedrich, Federico Voltes</p>
+  </footer>
+</body>
+</html>
