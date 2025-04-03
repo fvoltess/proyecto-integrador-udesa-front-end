@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 20px;               
+    background-image: url('../img/header\ background.png'); 
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center;
+    height: 200px;        
+    padding: 20px;          
+}
+
+.logo img {
+    display: flex;
+    width: 420px;          
+    max-width: 100%;        
+}
+
+
+
+body{
+    background-color: rgb(39, 49, 63);
+}
