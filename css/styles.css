@@ -11,18 +11,6 @@ body {
   line-height: 1.6;
 }
 
-body.body-detail-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url('/proyecto-integrador-udesa-front-end/img/Artboard_3.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #ffffff;
-}
-
 a {
   text-decoration: none;
   color: white;
