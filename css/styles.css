@@ -1,68 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-  }
-  
-  nav ul li a {
-    color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: white;
+  line-height: 1.6;
+}
+
+body.body-detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/proyecto-integrador-udesa-front-end/img/Artboard_3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+
+.site-header {
+  width: 100%;
+  background-color:#2a2a2a;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+  flex-shrink: 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.formulario-busqueda {
+  display: flex;
+  flex-grow: 1;
+  max-width: 400px;
+  margin: 0 15px;
+}
+
+.formulario-busqueda input[type="text"] {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 5px 0 0 5px;
+  background-color: #333333;
+  color: #fff;
+  font-size: 14.4px;
+}
+
+.formulario-busqueda button {
+  padding: 8px 15px;
+  border: 1px solid #555;
+  border-left: none;
+  background-color: #D9534F;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 14.4px;
+}
+
+.navegacion ul {
+  display: flex;
+}
+
+
+.navegacion a {
+  color: white;
+  font-size: 15.2px;
+  padding: 5px 10px;
+}
+
+
+.hero-section {
+  height: 85vh;
+  background-image: url('../img/tattoine_star_wars.jpg');
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 60%;
+  max-width: 550px;
+}
+
+.primera-seccion {
+  background-image: url('../img/Artboard_2.png');
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.primera-seccion h2 {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.movie-posters-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.primera-seccion .poster-card {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  max-width: 220px;
+  text-decoration: none;
+}
+.primera-seccion .poster-card a {
+    display: block;
     text-decoration: none;
-  }
-  
-  .formulario-busqueda {
-    margin-top: 10px;
-    display: flex;
-    gap: 5px;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  h2 {
-    margin-top: 40px;
-  }
-  
-  .contenedor-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .tarjeta {
-    border: 1px solid black;
-    padding: 10px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tarjeta img {
-    width: 100%;
-    height: auto;
-  }
-  
-  footer {
-    background-color: #eee;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-  }
+    color: inherit;
+    height: 100%;
+}
+.primera-seccion .movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.primera-seccion .poster-card h3 {
+    color: white;
+    font-size: 17.6px;
+    padding: 10px 12px 0px 12px;
+    margin: 0;
+}
+.primera-seccion .poster-card p {
+    color: white;
+    font-size: 13.6px;
+    padding: 2px 12px 10px 12px;
+    margin: 0;
+}
+
+.contenido-adicional {
+  padding: 60px 20px;
+  background-image: url('../img/Artboard_3.png');
+  background-size: cover;
+}
+
+.contenido-adicional section {
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contenido-adicional h2 {
+  color: white;
+  font-size: 35.2px;
+  margin-bottom: 35px;
+  text-align: center;
+  border-bottom: 2px solid #D9534F;
+  padding-bottom: 10px;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tarjeta {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  width: 200px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.tarjeta a {
+  text-decoration: none;
+}
+.tarjeta img {
+  width: 100%;
+}
+.tarjeta h3 {
+  color: white;
+  font-size: 17.6px;
+  padding: 10px 12px 0px 12px;
+  margin: 0;
+}
+.tarjeta p {
+  color: white;
+  font-size: 13.6px;
+  padding: 2px 12px 10px 12px;
+  margin: 0;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  padding: 20px;
+}
+
+/* falta responsive, y con respecto a las propiedades de flex (flexdirection, etc.) ya avisamos en clase y fue aprobado.
