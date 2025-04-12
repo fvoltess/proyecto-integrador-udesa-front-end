@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/inicarSesion.css">
-</head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <link rel="stylesheet" href="./css/header.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
-  <header class="header">
-    <div class="ContenidoHeader">
-      <div class="LogoContainer">
-        <a href="index.html">
-          <img src="./img/logochute.png" alt="Logo Chute" class="LogoHeader">
-        </a>
-              </div>
+  <body class="body-sitio-login">
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo-container">
+          <a class="logo-a" href="index.html"
+            ><img
+              src="img/chute_logo_blanco.png"
+              alt="Logo de Chute"
+              class="header-logo"
+          /></a>
+        </div>
+        <form
+          action="resultados-busqueda.html"
+          method="GET"
+          class="formulario-busqueda"
+          id="formulario-busqueda-logIn"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Buscar películas o series..."
+          />
+          <button type="submit">Buscar</button>
+        </form>
+        <nav class="navegacion">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="generos-peliculas.html">Géneros de Películas</a></li>
+            <li><a href="generos-series.html">Géneros de Series</a></li>
+            <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-      <form class="formulario">
-        <input type="text" placeholder="Buscar...">
-        <button type="submit">🔍</button>
-      </form>
+    <main class="LoginContenedor">
+      <div class="CajaLogin">
+        <h2>Iniciar Sesión</h2>
+        <form action="index.html" method="POST">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
 
-      <nav class="NavContenedor">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="generos-peliculas.html">Películas</a></li>
-          <li><a href="generos-series.html">Series</a></li>
-          <li><a href="iniciar-sesion.html">Login</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required />
 
+          <button type="submit">Ingresar</button>
 
-  <main class="LoginContenedor">
-    <div class="CajaLogin">
-      <h2>Iniciar Sesión</h2>
-      <form action="index.html" method="POST">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+          <p class="LinkRegistro">
+            <a href="registro.html">No tengo cuenta</a>
+          </p>
+        </form>
+      </div>
+    </main>
 
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required>
+    <footer class="footer">
+      <p>
+        Integrantes del equipo: Joaquín Celentano, Ethan Hedrich, Federico
+        Voltes
+      </p>
+    </footer>
 
-        <button type="submit">Ingresar</button>
-
-        <p class="LinkRegistro">
-          <a href="registro.html">No tengo cuenta</a>
-        </p>
-      </form>
-    </div>
-  </main>
-</body>
-
-</body>
-</html>
-
-
-
-<footer class="footer">
-    <p>Integrantes del equipo: Joaquín Celentano, Ethan Hedrich, Federico Voltes</p>
-</footer>
-
+  </body>
 </html>
