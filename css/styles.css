@@ -280,10 +280,6 @@ img {
 
 }
 
-/* falta responsive, y con respecto a las propiedades de flex (flexdirection, etc.) ya avisamos en clase y fue aprobado.
-
----------empieza el css para la pagina del login y singIn --------------------------------------------------------------------------------------------*/
-
 .body-sitio-login,
 .body-registro {
   background-image: url(../img/Artboard_3.png);
@@ -333,15 +329,12 @@ img {
   width: 100%;
   margin-top: 20px;
   padding: 12px;
-  background-color: #00aaff;
+  background-color: #d9534f;
   border-radius: 5px;
   color: white;
   font-weight: bold;
 }
 
-.CajaLogin button:hover {
-  background-color: #0088cc;
-}
 
 .LinkRegistro {
   margin-top: 15px;
@@ -432,3 +425,5 @@ img {
 .duracion {
   font-weight: lighter;
 }
+
+/* Con respecto a las propiedades de flex (flexdirection, etc.) ya avisamos en clase y fue aprobado. */
