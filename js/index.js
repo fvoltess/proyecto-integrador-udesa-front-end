@@ -1,19 +1,78 @@
+/*----------------- VARIABLES ----------------*/ 
+
+let API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02'; // Clave de la API de TMD
+let URL_API = 'https://api.themoviedb.org/3'; // Link base de la API
+let URL_IMG  = 'https://image.tmdb.org/t/p/w500'; // w500=tamaño de 500px
+let FALLBACK = './img/fallback.jpg'; // Imagen default si falla
+
+/* ----------  MAIN  ---------- */
+
 document.addEventListener('DOMContentLoaded', function () { //Cuando carga el HTML(evento: DOMContentLoaded), se ejecuta
-  console.log('buenasss');        
+  console.log('buenasss');
+  cargarTopMovies();
+  // falta la función para poblar la lista de series y películas mas populares (ya agrego en breve)
 });
 
-const API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02'; // Clave de la API de TMD
-const URL_API = 'https://api.themoviedb.org/3'; // Link base de la API 
+/* ----------  PELICULA MEJOR VALORADAS  ---------- */
+function cargarTopMovies() {
+  let contenedor = document.querySelector('.movie-posters-container');
 
-document.addEventListener('DOMContentLoaded', function () {
   fetch(`${URL_API}/movie/top_rated?api_key=${API_KEY}&language=es-ES&page=1`)
-    .then(function (response) {
-      return response.json();
+    .then(function (respuesta) {
+      return respuesta.json();
     })
-    .then(function (data) {
-      console.log(data.results);       // Array de peliculas
+    .then(function (datos) {
+      for (let i = 0; i < 5; i++) {
+        let pelicula = datos.results[i];
+
+        // Insertamos el HTML generado por la función
+        contenedor.innerHTML += crearTarjeta(
+          pelicula.id,
+          pelicula.title,
+          pelicula.release_date,
+          pelicula.poster_path,
+          true // es pelicula
+        );
+      }
     })
     .catch(function (error) {
-      console.log('El error es: ', error);
+      contenedor.innerHTML = '<p>Error al cargar las pelicula.</p>';
+      console.log('Ocurrió un error al pedir las peliculas: ', error);
     });
-});
+}
+
+/* ----------  CREA UNA TARJETA DE PELICULA O SERIE ---------- */
+function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {
+  let linkDetalle;
+  if (esPelicula === true) {
+    linkDetalle = `detail-movie.html?id=${id}`;
+  } else {
+    linkDetalle = `detail-serie.html?id=${id}`;
+  }
+
+  let imagen;
+  if (posterPath) {
+    imagen = URL_IMG + posterPath;
+  } else {
+    imagen = FALLBACK;
+  }
+
+  let textoFecha;
+
+if (fecha) {
+  textoFecha = fecha;
+} else {
+  textoFecha = 'Sin dato';
+}
+
+return `
+  <article class="poster-card">
+    <a href="${linkDetalle}">
+      <img src="${imagen}" alt="${titulo}" class="movie-poster" />
+      <h3>${titulo}</h3>
+      <p>Fecha de estreno: ${textoFecha}</p>
+    </a>
+  </article>
+`;
+
+}
