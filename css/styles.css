@@ -16,15 +16,13 @@ body {
 body {
   flex: 1;
   font-family: "Roboto", sans-serif;
-  background-color: black;
+  background-color: black; 
   color: white;
   line-height: 1.6;
   min-height: 100%;
 }
 
-main {
-  flex: 1;
-}
+
 
 a {
   text-decoration: none;
@@ -292,7 +290,7 @@ img {
 
 .LoginContenedor {
   min-height: 650px;
-  display: flex;
+  diplay: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
@@ -430,3 +428,4 @@ img {
 }
 
 /* Con respecto a las propiedades de flex (flexdirection, etc.) ya avisamos en clase y fue aprobado. */
+
