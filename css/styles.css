@@ -239,6 +239,33 @@ img {
   padding: 20px;
 }
 
+tarjeta h3 {
+  font-size: 15px;
+  line-height: 1.2; 
+}
+
+.tarjeta p {
+  font-size: 12.5px;
+  padding-bottom: 14px; 
+}
+
+.poster-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  width: 200px;       
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.poster-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .site-header {
     padding: 0;
@@ -424,6 +451,3 @@ img {
 .duracion {
   font-weight: lighter;
 }
-
-/* Con respecto a las propiedades de flex (flexdirection, etc.) ya avisamos en clase y fue aprobado. */
-

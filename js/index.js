@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function () { //Cuando carga el HT
   console.log('buenasss');
   cargarTopMovies();
   cargarTopSeries();
-  //cargarPeliculasPopulares();
-
+  cargarPeliculasPopulares();
 
 });
 
@@ -73,40 +72,73 @@ function cargarTopSeries() {
 }
 
 
-/* --------  PELICULAS MAS POPULARES  ---------- */
+/* ----------  PELÍCULAS MÁS POPULARES  ---------- */
+function cargarPeliculasPopulares() {
+  let contenedorPop = document.querySelectorAll('.contenedor-tarjetas')[1];
+
+  let url = URL_API + '/movie/popular?api_key=' + API_KEY + '&language=es-ES&page=1';
+
+  fetch(url)
+    .then(function (respuesta) {
+      return respuesta.json();
+    })
+    .then(function (datos) {
+      for (let i = 0; i < 5; i++) {
+        let peli = datos.results[i];
+
+        let id = peli.id;
+        let titulo = peli.title;
+        let fecha = peli.release_date;
+        let poster = peli.poster_path;
+        let esPelicula = true;
+
+        contenedorPop.innerHTML += crearTarjeta(id, titulo, fecha, poster, esPelicula);
+      }
+    })
+    .catch(function (error) {
+      contenedorPop.innerHTML = '<p>Error al cargar las películas populares.</p>';
+      console.log('Ocurrió un error al pedir las películas populares: ', error);
+    });
+}
 
 /* ----------  CREAR TARJETA DE PELICULA/SERIE ---------- */
 function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {
+  // link
   let linkDetalle;
-  if (esPelicula === true) {
-    linkDetalle = `detail-movie.html?id=${id}`;
-  } else {
-    linkDetalle = `detail-serie.html?id=${id}`;
-  }
+if (esPelicula === true) {
+  linkDetalle = `detail-movie.html?id=${id}`;
+} else {
+  linkDetalle = `detail-serie.html?id=${id}`;
+}
 
+
+  // imagen
   let imagen;
-  if (posterPath) {
-    imagen = URL_IMG + posterPath;
-  } else {
-    imagen = FALLBACK;
-  }
+if (posterPath) {
+  imagen = URL_IMG + posterPath;
+} else {
+  imagen = FALLBACK;
+}
 
+
+  //Fecha
   let textoFecha;
-
 if (fecha) {
   textoFecha = fecha;
 } else {
   textoFecha = 'Sin dato';
 }
 
-return `
-  <article class="poster-card">
-    <a href="${linkDetalle}">
-      <img src="${imagen}" alt="${titulo}" class="movie-poster" />
-      <h3>${titulo}</h3>
-      <p>Fecha de estreno: ${textoFecha}</p>
-    </a>
-  </article>
-`;
+  // clase distinta según si es serie o pelicula
+  let clase = 'tarjeta';
 
+  return (
+    `<article class="${clase}">
+       <a href="${linkDetalle}">
+         <img src="${imagen}" alt="${titulo}" class="movie-poster" />
+         <h3>${titulo}</h3>
+         <p>Fecha de estreno: ${textoFecha}</p>
+       </a>
+     </article>`
+  );
 }
