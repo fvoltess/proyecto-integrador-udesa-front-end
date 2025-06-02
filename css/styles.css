@@ -92,7 +92,14 @@ img {
   cursor: pointer;
   border-radius: 0 5px 5px 0;
   font-size: 14.4px;
+
 }
+
+.formulario-busqueda button:hover {
+  background-color: #c9302c;
+  transition: background-color 0.3s;
+}
+
 
 .navegacion ul {
   display: flex;
@@ -239,7 +246,7 @@ img {
   padding: 20px;
 }
 
-tarjeta h3 {
+.tarjeta h3 {
   font-size: 15px;
   line-height: 1.2; 
 }
@@ -265,6 +272,26 @@ tarjeta h3 {
   height: auto;
   display: block;
 }
+
+button:hover, .tarjeta:hover, .poster-card:hover {
+  background-color: #444;
+  cursor: pointer;
+  transform: scale(1.05);      
+  transition: transform 0.25s, background-color 0.25s;
+}
+
+.contenedor-recomendacion {
+  justify-content: center;
+}
+
+.recomendacion-casa .tarjeta:hover,
+.recomendacion-casa .poster-card:hover {
+  transform: scale(2.5);
+  background-color: lightblue;
+  border: 5px dashed yellow;  
+}
+
+
 
 @media (max-width: 768px) {
   .site-header {

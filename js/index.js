@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () { //Cuando carga el HT
   cargarTopMovies();
   cargarTopSeries();
   cargarPeliculasPopulares();
+  cargarRecomendacionCasa(); // de yapa
 
 });
 
@@ -100,6 +101,33 @@ function cargarPeliculasPopulares() {
       console.log('Ocurrió un error al pedir las películas populares: ', error);
     });
 }
+
+/* ----------  RECOMENDACIÓN DE LA CASA ---------- */
+
+function cargarRecomendacionCasa() {
+  let contenedorRecomendacion = document.querySelectorAll('.contenedor-tarjetas')[2];
+
+  let url = URL_API + '/movie/1142620?api_key=' + API_KEY + '&language=es-ES';
+
+  fetch(url)
+    .then(function (respuesta) {
+      return respuesta.json();
+    })
+    .then(function (pelicula) {
+      let id = pelicula.id;
+      let titulo = pelicula.title;
+      let fecha = pelicula.release_date;
+      let poster = pelicula.poster_path;
+      let esPelicula = true;
+
+      contenedorRecomendacion.innerHTML += crearTarjeta(id, titulo, fecha, poster, esPelicula);
+    })
+    .catch(function (error) {
+      contenedorRecomendacion.innerHTML = '<p>Error al cargar la recomendación.</p>';
+      console.log('Ocurrió un error con la recomendación de la casa: ', error);
+    });
+}
+
 
 /* ----------  CREAR TARJETA DE PELICULA/SERIE ---------- */
 function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {
