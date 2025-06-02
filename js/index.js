@@ -10,7 +10,10 @@ let FALLBACK = './img/fallback.jpg'; // Imagen default si falla
 document.addEventListener('DOMContentLoaded', function () { //Cuando carga el HTML(evento: DOMContentLoaded), se ejecuta
   console.log('buenasss');
   cargarTopMovies();
-  // falta la función para poblar la lista de series y películas mas populares (ya agrego en breve)
+  cargarTopSeries();
+  //cargarPeliculasPopulares();
+
+
 });
 
 /* ----------  PELICULA MEJOR VALORADAS  ---------- */
@@ -41,7 +44,38 @@ function cargarTopMovies() {
     });
 }
 
-/* ----------  CREA UNA TARJETA DE PELICULA O SERIE ---------- */
+/* ----------  SERIES MEJOR VALORADAS  ----------- */
+
+function cargarTopSeries() {
+  let contenedorSeries = document.querySelectorAll('.contenedor-tarjetas')[0]; //.contenedor-tarjetas (posición 0) es donde van las  series
+
+  fetch(`${URL_API}/tv/top_rated?api_key=${API_KEY}&language=es-ES&page=1`)
+    .then(function (respuesta) {
+      return respuesta.json();
+    })
+    .then(function (datos) {
+      for (let i = 0; i < 5; i++) {
+        let serie = datos.results[i];
+
+        contenedorSeries.innerHTML += crearTarjeta(
+          serie.id,
+          serie.name,            
+          serie.first_air_date,  
+          serie.poster_path,
+          false                 // es serie
+        );
+      }
+    })
+    .catch(function (error) {
+      contenedorSeries.innerHTML = '<p>Error al cargar las series.</p>';
+      console.log('ocurrió un error al pedir las series: ', error);
+    });
+}
+
+
+/* --------  PELICULAS MAS POPULARES  ---------- */
+
+/* ----------  CREAR TARJETA DE PELICULA/SERIE ---------- */
 function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {
   let linkDetalle;
   if (esPelicula === true) {
