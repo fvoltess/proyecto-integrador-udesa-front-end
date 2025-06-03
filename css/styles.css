@@ -83,8 +83,10 @@ img {
   font-size: 14.4px;
 }
 
-.formulario-busqueda button {
-  padding: 8px 15px;
+.formulario-busqueda button,.boton_serie,.boton_pelicula{
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
   border: 1px solid #555;
   border-left: none;
   background-color: #d9534f;
@@ -92,10 +94,14 @@ img {
   cursor: pointer;
   border-radius: 0 5px 5px 0;
   font-size: 14.4px;
-
 }
 
-.formulario-busqueda button:hover {
+.boton_pelicula,.boton_serie {
+  border-left: none;
+  border-radius: 0; 
+}
+
+.boton_serie:hover,.boton_pelicula:hover,.formulario-busqueda button:hover {
   background-color: #c9302c;
   transition: background-color 0.3s;
 }
