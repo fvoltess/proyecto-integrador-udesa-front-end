@@ -136,7 +136,8 @@ function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {
 if (esPelicula === true) {
   linkDetalle = `detail-movie.html?id=${id}`;
 } else {
-  linkDetalle = `detail-serie.html?id=${id}`;
+  linkDetalle = `detail-series.html?id=${id}`;
+
 }
 
 
