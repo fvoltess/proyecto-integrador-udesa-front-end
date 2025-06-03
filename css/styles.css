@@ -182,7 +182,7 @@ img {
 .contenido-adicional {
   flex: 1;
   padding: 60px 20px;
-  background-image: url("../img/Artboard_3.png");
+  background-image: url(../img/Artboard_3.png);
   background-size: cover;
 }
 
@@ -421,7 +421,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 
 .body-pagina-pelicula {
   display: flex;
-  background-image: url("/proyecto-integrador-udesa-front-end/img/Artboard_3.png");
+  background-image: url(../img/Artboard_3.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
