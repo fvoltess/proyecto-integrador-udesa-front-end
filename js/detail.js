@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="detalles">
         <div class="imdb-texto">
           <h2 class="fecha">Fecha de estreno: ${data.release_date}</h2>
-          <img src="./img/imdb-breaking-bad.PNG" alt="IMDb Rating" class="foto-imdb">
         </div>
         
         <h2 class="duracion">${data.runtime} minutos</h2>
