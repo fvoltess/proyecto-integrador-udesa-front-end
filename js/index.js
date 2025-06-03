@@ -107,7 +107,7 @@ function cargarPeliculasPopulares() {
 function cargarRecomendacionCasa() {
   let contenedorRecomendacion = document.querySelectorAll('.contenedor-tarjetas')[2];
 
-  let url = URL_API + '/movie/1142620?api_key=' + API_KEY + '&language=es-ES';
+  let url = URL_API + '/movie/1458872?api_key=' + API_KEY + '&language=es-ES';
 
   fetch(url)
     .then(function (respuesta) {
