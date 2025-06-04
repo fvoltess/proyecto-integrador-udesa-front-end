@@ -516,3 +516,25 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   margin: 10px;
   font-family: "Roboto", sans-serif;
 }
+
+.detalle-contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.poster-de-peli {
+  flex: 1;
+  max-width: 300px;
+}
+
+
+
+.info-peli {
+  flex: 2;
+  padding: 10px;
+}
