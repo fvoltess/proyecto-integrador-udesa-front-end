@@ -16,9 +16,24 @@
         </a>
       </div>
 
-      <form action="search-results.html" method="GET" class="formulario-busqueda">
-        <input type="text" name="q" placeholder="Buscar películas o series..." />
-        <button type="submit">Buscar</button>
+      <form
+          action="search-results.html"
+          method="GET"
+          class="formulario-busqueda"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Buscar películas o series..."
+          />
+          <div class="boton_pelicula">
+            <input type="radio" name="tipo" value="pelicula" checked />Películas
+          </div>
+          <div class="boton_serie">
+            <input type="radio" name="tipo" value="serie" />Series
+          </div>
+
+          <button type="submit">Buscar</button>
       </form>
 
       <nav class="navegacion">

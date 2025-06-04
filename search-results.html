@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Generos Peliculas</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Resultados de búsqueda</title>
+  <link rel="stylesheet" href="./css/styles.css"/>
 </head>
-
-<body class="body-genero-peliculas">
+<body>
   <header class="site-header">
       <div class="header-content">
         <div class="logo-container">
@@ -46,20 +45,22 @@
           </ul>
         </nav>
       </div>
-    </header>
+  </header>
 
   <main>
-    <div class="contenido-adicional">
-        <section>
-            <h2>GENERO DE PELICULAS</h2>
-            <ul class="lista-generos"></ul> <!--saque todo lo hardcodeado y deje el class nomas-->
-        </section>
-    </div>
+    <section class="contenido-adicional"> <!--le puse el nombre contenido adicional simplemente para vincularlo al codigo de CSS que ya tenia hecho antes-->
+      <h2 id="titulo-busqueda"></h2>
+      <p id="spinner">Cargando resultados...</p>
+      <div class="contenedor-tarjetas"></div>
+    </section>
   </main>
 
   <footer class="footer">
-    <p><strong>Integrantes del equipo</strong>: Joaquín Celentano, Ethan Hedrich, Federico Voltes</p>
+      <p>
+        <strong>Integrantes del equipo</strong>: Joaquín Celentano, Ethan
+        Hedrich, Federico Voltes
+      </p>
   </footer>
-  <script src="./js/generos-peliculas.js"></script>
+  <script src="./js/search-results.js"></script>
 </body>
 </html>
