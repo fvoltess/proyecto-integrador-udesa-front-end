@@ -477,12 +477,12 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 }
 
 .año {
-  font-size: 250%;
+  font-size: 200%;
   font-weight: bold;
 }
 
 .duracion {
-  font-weight: lighter;
+  font-size: medium;
 }
 
 
