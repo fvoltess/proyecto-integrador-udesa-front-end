@@ -9,44 +9,50 @@
 
 <body class="body-genero-peliculas">
   <header class="site-header">
-    <div class="header-content">
-      <div class="logo-container">
-        <a class="logo-a" href="index.html"><img src="img/chute_logo_blanco.png" alt="Logo de Chute" class="header-logo"></a>
+      <div class="header-content">
+        <div class="logo-container">
+          <a class="logo-a" href="index.html"
+            ><img
+              src="img/chute_logo_blanco.png"
+              alt="Logo de Chute"
+              class="header-logo"
+            /></a>
+        </div>
+        <form
+          action="search-results.html"
+          method="GET"
+          class="formulario-busqueda"
+        >
+          <input
+            type="text"
+            name="q"
+            placeholder="Buscar películas o series..."
+          />
+          <div class="boton_pelicula">
+            <input type="radio" name="tipo" value="pelicula" checked />Películas
+          </div>
+          <div class="boton_serie">
+            <input type="radio" name="tipo" value="serie" />Series
+          </div>
+
+          <button type="submit">Buscar</button>
+        </form>
+        <nav class="navegacion">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="generos-peliculas.html">Géneros de Películas</a></li>
+            <li><a href="generos-series.html">Géneros de Series</a></li>
+            <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+          </ul>
+        </nav>
       </div>
-      <form action="resultados-busqueda.html" method="GET" class="formulario-busqueda">
-        <input type="text" name="q" placeholder="Buscar películas o series..." />
-        <button type="submit">Buscar</button>
-      </form>
-      <nav class="navegacion">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="generos-peliculas.html">Géneros de Películas</a></li>
-          <li><a href="generos-series.html">Géneros de Series</a></li>
-          <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
   <main>
     <div class="contenido-adicional">
         <section>
-            <h2>GENERO DE SERIES</h2>
-            <div class="contenedor-tarjetas">
-                <article class="tarjeta">
-                    <a href="genres-seriesDrama.html">
-                      <h3>Drama</h3>
-                      <p>Todas las series de drama</p>
-                    </a>
-                </article>
-
-                <article class="tarjeta">
-                    <a href="genres-seriesAccion.html">
-                      <h3>Accion</h3>
-                      <p>Todas las series de accion</p>
-                    </a>
-                </article>
-            </div>
+            <h2>GENEROS DE SERIES</h2>
+            <ul class="lista-generos"></ul> <!--saque todo lo hardcodeado y deje el class nomas-->
         </section>
     </div>
   </main>
@@ -54,6 +60,6 @@
   <footer class="footer">
     <p><strong>Integrantes del equipo</strong>: Joaquín Celentano, Ethan Hedrich, Federico Voltes</p>
   </footer>
-
+  <script src="./js/generos-series.js"></script>
 </body>
 </html>
