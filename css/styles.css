@@ -531,3 +531,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   flex: 2;
   padding: 10px;
 }
+
+input[type="radio"] {
+  accent-color: #d9534f; /* Color del botón */
+}
