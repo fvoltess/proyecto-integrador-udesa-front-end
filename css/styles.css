@@ -311,7 +311,34 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   }
 
   .formulario-busqueda {
-    display: none;
+    display: flex; 
+    flex-grow: 1;
+    max-width: 100%; 
+    margin: 10px 0; 
+    order: 2; /* Se mueve el search bar ABAJO de lo demás por razones estéticas*/
+  }
+
+  .formulario-busqueda input[type="text"] {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 5px 0 0 5px;
+    background-color: #333333;
+    color: #fff;
+    font-size: 14.4px;
+  }
+
+  .formulario-busqueda button {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid #555;
+    border-left: none;
+    background-color: #d9534f;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 14.4px;
   }
 
   .logo-a {
@@ -324,6 +351,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    order: 1; /* Se mueve el nav ARRIBA del search bar por razones estéticas*/
   }
 
   .navegacion li {
@@ -334,6 +362,51 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   .contenedor-tarjetas {
     justify-content: center;
   }
+
+  .tarjeta {
+    margin: 10px 5px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navegacion ul {
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+
+  .formulario-busqueda {
+    max-width: 100%; 
+    order: 2; 
+  }
+}
+
+@media (max-width: 992px) {
+  .header-content {
+    padding: 0 10px;
+  }
+
+  .movie-posters-container {
+    justify-content: center;
+  }
+
+  .formulario-busqueda {
+    max-width: 100%; 
+    order: 2; 
+  }
+}
+
+.main-pagina-pelicula {
+  max-width: 100%;
+  padding: 20px 10px;
+}
+
+.navegacion a {
+  padding: 8px 12px;
+}
+
+.navegacion a:hover {
+  background: #444;
 }
 
 .body-sitio-login,
@@ -542,6 +615,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 }
 
 input[type="radio"] {
-  accent-color: #d9534f; /* Color del botón */
+  accent-color: #d9534f; /* color del botón */
 }
 
