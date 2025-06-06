@@ -563,8 +563,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 }
 
 
-/* codigo para la pagina de busqueda */
-
 #titulo-busqueda {
   font-family: "Roboto", sans-serif;
   font-size: 32px;
@@ -577,7 +575,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   margin: 0px 5px 20px 5px;
 
 }
-/* codigo para la pagina de generos de pelicula */
 .lista-generos{
   display: flex;
   background-color: #2a2a2a;
@@ -599,7 +596,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
   max-width: 1000px;
   margin: 40px auto;
 }
@@ -620,3 +616,4 @@ input[type="radio"] {
   accent-color: #d9534f; /* color del botón */
 }
 
+.body-pagina-pelicula { background-repeat: repeat; }
