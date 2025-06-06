@@ -3,31 +3,28 @@ let URL_BASE = 'https://api.themoviedb.org/3';
 let URL_IMG = 'https://image.tmdb.org/t/p/w500';
 let FALLBACK = './img/fallback.jpg';
 
-// Obtener los parámetros de la URL
 let queryString = location.search;
 let datos = new URLSearchParams(queryString);
 let termino = datos.get("q");
-let tipo = datos.get("tipo"); // puede ser "pelicula" o "serie"
+let tipo = datos.get("tipo");
 
-// Selección de elementos del DOM
 let titulo = document.querySelector("#titulo-busqueda");
 let contenedor = document.querySelector(".contenedor-tarjetas");
 let spinner = document.querySelector("#spinner");
 
-// Mostrar el título de búsqueda
-titulo.textContent = "Resultados de búsqueda para: " + termino;
+titulo.innerText = "Resultados de búsqueda para: " + termino;
 
-// Determinar endpoint correcto
 let endpoint = "";
 if (tipo === "pelicula") {
   endpoint = "/search/movie";
-} else if (tipo === "serie") {
+}
+if (tipo === "serie") {
   endpoint = "/search/tv";
-} else {
-  endpoint = "/search/movie"; // default
+}
+if (tipo !== "pelicula" && tipo !== "serie") {
+  endpoint = "/search/movie";
 }
 
-// Construir la URL
 let url = URL_BASE + endpoint + "?api_key=" + API_KEY + "&language=es-ES&query=" + termino;
 
 fetch(url)
@@ -42,41 +39,55 @@ fetch(url)
     } else {
       for (let i = 0; i < data.results.length; i++) {
         let item = data.results[i];
-        let titulo = tipo === "pelicula" ? item.title : item.name;
-        let fecha = tipo === "pelicula" ? item.release_date : item.first_air_date;
-        let id = item.id;
+        let tituloFinal = "";
+        let fecha = "";
         let poster = item.poster_path;
+        let id = item.id;
 
-        contenedor.innerHTML += crearTarjeta(id, titulo, fecha, poster, tipo);
+        if (tipo === "pelicula") {
+          tituloFinal = item.title;
+          fecha = item.release_date;
+        }
+        if (tipo === "serie") {
+          tituloFinal = item.name;
+          fecha = item.first_air_date;
+        }
+
+        contenedor.innerHTML += crearTarjeta(id, tituloFinal, fecha, poster, tipo);
       }
     }
   })
-  .catch(function(error) {
-    spinner.style.display = "none";
-    contenedor.innerHTML = "<p>Error al cargar los resultados.</p>";
-    console.log("Error: ", error);
+  .catch(function() {
+    console.log("Error en la carga.");
   });
 
-// Función para crear tarjetas
-function crearTarjeta(id, titulo, fecha, posterPath, tipo) {
+function crearTarjeta(id, titulo, fecha, poster, tipo) {
   let link = "";
   if (tipo === "pelicula") {
     link = "detail-movie.html?id=" + id;
-  } else {
+  }
+  if (tipo === "serie") {
     link = "detail-serie.html?id=" + id;
   }
 
-  let imagen = posterPath ? URL_IMG + posterPath : FALLBACK;
-  let textoFecha = fecha ? fecha : "Sin fecha";
+  let imagen = FALLBACK;
+  if (poster !== null) {
+    imagen = URL_IMG + poster;
+  }
 
- return `
-  <article class="tarjeta">
-    <a href="${link}">
-      <img src="${imagen}" alt="${titulo}" class="movie-poster"/>
-      <h3>${titulo}</h3>
-      <p>Fecha de estreno: ${textoFecha}</p>
-    </a>
-  </article>
-`;
+  let textoFecha = "Sin fecha";
+  if (fecha !== undefined && fecha !== "") {
+    textoFecha = fecha;
+  }
 
+  let estructura =
+    '<article class="tarjeta">' +
+      '<a href="' + link + '">' +
+        '<img src="' + imagen + '" alt="' + titulo + '" class="movie-poster"/>' +
+        '<h3>' + titulo + '</h3>' +
+        '<p>Fecha de estreno: ' + textoFecha + '</p>' +
+      '</a>' +
+    '</article>';
+
+  return estructura;
 }

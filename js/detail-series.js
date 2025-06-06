@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="detalles">
             <div class="imdb-texto">
               <h2 class="fecha">Fecha de estreno: ${data.first_air_date || 'Sin dato'}</h2>
-              <img src="./img/imdb-breaking-bad.PNG" alt="IMDb Rating" class="foto-imdb">
             </div>
             <h2 class="duracion">${data.number_of_seasons} temporada(s), ${data.number_of_episodes} episodio(s)</h2>
             <h2 class="sinopsis-title">Sinopsis:</h2>

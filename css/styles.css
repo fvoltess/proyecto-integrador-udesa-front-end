@@ -489,7 +489,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 /* codigo para la pagina de busqueda */
 
 #titulo-busqueda {
-  ont-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: white;
