@@ -32,7 +32,7 @@ fetch(url)
     return respuesta.json();
   })
   .then(function(data) {
-    spinner.style.display = "none";
+    spinner.style.display = "none"; // escondemos el circulo que carga (estilo)
 
     if (data.results.length === 0) {
       contenedor.innerHTML = "<p>No se encontraron resultados.</p>";

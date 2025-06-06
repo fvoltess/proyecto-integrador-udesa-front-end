@@ -8,11 +8,11 @@ let FALLBACK = './img/fallback.jpg'; // Imagen default si falla
 /* ----------  MAIN  ---------- */
 
 document.addEventListener('DOMContentLoaded', function () { //Cuando carga el HTML(evento: DOMContentLoaded), se ejecuta
-  console.log('buenasss');
+  console.log('Cargado');
   cargarTopMovies();
   cargarTopSeries();
   cargarPeliculasPopulares();
-  cargarRecomendacionCasa(); // de yapa
+  cargarRecomendacionCasa(); // extra
 
 });
 
@@ -28,7 +28,6 @@ function cargarTopMovies() {
       for (let i = 0; i < 5; i++) {
         let pelicula = datos.results[i];
 
-        // Insertamos el HTML generado por la función
         contenedor.innerHTML += crearTarjeta(
           pelicula.id,
           pelicula.title,

@@ -1,11 +1,11 @@
-const API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02';
-const URL_API = 'https://api.themoviedb.org/3';
-const URL_IMG = 'https://image.tmdb.org/t/p/w500';
-const FALLBACK = './img/fallback.jpg';
+let API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02';
+let URL_API = 'https://api.themoviedb.org/3';
+let URL_IMG = 'https://image.tmdb.org/t/p/w500';
+let FALLBACK = './img/fallback.jpg';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const params = new URLSearchParams(location.search);
-  const id = params.get('id');
+  let parametros = new URLSearchParams(location.search);
+  let id = parametros.get('id');
 
   if (!id) {
     document.querySelector('main').innerHTML = '<p>Error: serie no encontrada.</p>';
@@ -18,9 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(function(data) {
       document.title = data.name;
-      const contenedor = document.querySelector('.detalle-contenedor');
-      const imagen = data.poster_path ? URL_IMG + data.poster_path : FALLBACK;
-
+      let contenedor = document.querySelector('.detalle-contenedor');
+      let imagen;
+      if (data.poster_path) {
+        imagen = URL_IMG + data.poster_path;
+      } else {
+        imagen = FALLBACK;
+      }
+      
       let generos = '';
       for (let i = 0; i < data.genres.length; i++) {
         generos += data.genres[i].name;
