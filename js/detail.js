@@ -10,12 +10,10 @@ const FALLBACK = './img/fallback.jpg';
 document.addEventListener('DOMContentLoaded', function () {
   console.log("Página cargada");
 
-  let idPelicula = location.search;
-  console.log('ID crudo:', idPelicula);
-
-  let partes = idPelicula.split('=');
-  let id = partes[1];
-  console.log('ID limpio :', id);
+  let queryString = location.search;
+  let datos = new URLSearchParams(queryString);
+  let id = datos.get("id");
+  console.log('ID limpio:', id);
 
   fetch(URL_API + '/movie/' + id + '?api_key=' + API_KEY + '&language=es-ES')
     .then(function(response) {

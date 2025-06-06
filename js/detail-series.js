@@ -12,14 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  fetch(`${URL_API}/tv/${id}?api_key=${API_KEY}&language=es-ES`)
-    .then(res => res.json())
-    .then(data => {
+  fetch(URL_API + '/tv/' + id + '?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(res) {
+      return res.json();
+    })
+    .then(function(data) {
       document.title = data.name;
       const contenedor = document.querySelector('.detalle-contenedor');
       const imagen = data.poster_path ? URL_IMG + data.poster_path : FALLBACK;
 
-      // Reemplazo de .map por for tradicional
       let generos = '';
       for (let i = 0; i < data.genres.length; i++) {
         generos += data.genres[i].name;
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </section>
       `;
     })
-    .catch(error => {
+    .catch(function(error) {
       console.error('Error al cargar los datos de la serie:', error);
       document.querySelector('main').innerHTML = '<p>Error al cargar los datos de la serie.</p>';
     });
