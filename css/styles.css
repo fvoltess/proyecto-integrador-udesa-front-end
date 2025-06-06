@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+main {
+  flex: 1;
+}
+
 html,
 body {
   height: 100%;
@@ -481,8 +485,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   display: flex;
   justify-content: space-between;
 }
-
-/*---------empieza el css para breaking bad --------------------------------------------------------------------------------------------------*/
 
 .main-pagina-pelicula {
   display: flex;
