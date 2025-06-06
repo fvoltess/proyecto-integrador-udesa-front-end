@@ -104,29 +104,65 @@ function cargarPeliculasPopulares() {
 /* ----------  RECOMENDACIÓN DE LA CASA ---------- */
 
 function cargarRecomendacionCasa() {
-  let contenedorRecomendacion = document.querySelectorAll('.contenedor-tarjetas')[2];
 
-  let url = URL_API + '/movie/1458872?api_key=' + API_KEY + '&language=es-ES';
+  let filas = document.querySelectorAll('.contenedor-recomendacion');
+  let filaUno = filas[0]; 
+  let filaDos = filas[1];   
 
-  fetch(url)
-    .then(function (respuesta) {
-      return respuesta.json();
-    })
-    .then(function (pelicula) {
-      let id = pelicula.id;
-      let titulo = pelicula.title;
-      let fecha = pelicula.release_date;
-      let poster = pelicula.poster_path;
-      let esPelicula = true;
+  /// Joaco  - Pelicula
+  fetch(URL_API + '/movie/106646?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(respuesta){ return respuesta.json(); })
+    .then(function(datos){
+      let tarjeta = crearTarjeta(datos.id, datos.title + ' — Joaco', datos.release_date,
+                                 datos.poster_path, true);
+      filaUno.innerHTML += tarjeta;
+    });
 
-      contenedorRecomendacion.innerHTML += crearTarjeta(id, titulo, fecha, poster, esPelicula);
-    })
-    .catch(function (error) {
-      contenedorRecomendacion.innerHTML = '<p>Error al cargar la recomendación.</p>';
-      console.log('Ocurrió un error con la recomendación de la casa: ', error);
+  // Thomas - Pelicula
+  fetch(URL_API + '/movie/8193?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(respuesta){ return respuesta.json(); })
+    .then(function(datos){
+      let tarjeta = crearTarjeta(datos.id, datos.title + ' — Thomas', datos.release_date,
+                                 datos.poster_path, true);
+      filaUno.innerHTML += tarjeta;
+    });
+
+  // Fede - Pelicula
+  fetch(URL_API + '/movie/703?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      let tarjeta = crearTarjeta(data.id, data.title + ' — Fede', data.release_date,
+                                 data.poster_path, true);
+      filaUno.innerHTML += tarjeta;
+    });
+
+  // Joaco - Serie
+  fetch(URL_API + '/tv/60574?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(response){ return response.json(); })
+    .then(function(datos){
+      let tarjeta = crearTarjeta(datos.id, datos.name + ' — Joaco', datos.first_air_date,
+                                 datos.poster_path, false);
+      filaDos.innerHTML += tarjeta;
+    });
+
+  // Thomas – Serie
+  fetch(URL_API + '/tv/1398?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(response){ return response.json(); })
+    .then(function(datos){
+      let tarjeta = crearTarjeta(datos.id, datos.name + ' — Thomas', datos.first_air_date,
+                                 datos.poster_path, false);
+      filaDos.innerHTML += tarjeta;
+    });
+
+  // Fede - Serie
+  fetch(URL_API + '/tv/1920?api_key=' + API_KEY + '&language=es-ES')
+    .then(function(response){ return response.json(); })
+    .then(function(datos){
+      let tarjeta = crearTarjeta(datos.id, datos.name + ' — Fede', datos.first_air_date,
+                                 datos.poster_path, false);
+      filaDos.innerHTML += tarjeta;
     });
 }
-
 
 /* ----------  CREAR TARJETA DE PELICULA/SERIE ---------- */
 function crearTarjeta(id, titulo, fecha, posterPath, esPelicula) {

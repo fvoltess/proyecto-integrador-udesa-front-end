@@ -290,13 +290,6 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   justify-content: center;
 }
 
-.recomendacion-casa .tarjeta:hover,
-.recomendacion-casa .poster-card:hover {
-  transform: scale(2.5);
-  background-color: lightblue;
-  border: 5px dashed yellow;  
-}
-
 
 
 @media (max-width: 768px) {
