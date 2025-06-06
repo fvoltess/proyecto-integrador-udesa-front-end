@@ -432,7 +432,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   align-items: center;
 }
 
-.nombre-año {
+.nombre {
   display: flex;
   justify-content: space-between;
 }
@@ -457,6 +457,10 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   justify-content: space-between;
 }
 
+.fecha {
+  font-weight: normal;
+}
+
 .sinopsis {
   text-align: justify;
 }
@@ -464,7 +468,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
   margin-top: 10px;
 }
 
-.nombre {
+.nombre-peli {
   font-size: 250%;
   font-weight: bold;
 }
@@ -476,6 +480,7 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 
 .duracion {
   font-size: medium;
+  font-weight: normal;
 }
 
 

@@ -39,9 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <img src="${imagen}" alt="${data.name}" class="foto-peli">
         </div>
         <section class="info-peli">
-          <div class="nombre-año">
+          <div class="nombre-peli">
             <h1 class="nombre">${data.name}</h1>
-            <h1 class="año">${data.first_air_date || 'Sin fecha'}</h1>
           </div>
           <div class="detalles">
             <div class="imdb-texto">
