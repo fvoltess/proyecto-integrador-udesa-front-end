@@ -1,4 +1,4 @@
-const API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02'; 
+const API_KEY = 'dd7272a10fa82bffe9a6d08d4f2cff02';
 const URL_API = 'https://api.themoviedb.org/3';
 const URL_IMG = 'https://image.tmdb.org/t/p/w500';
 const FALLBACK = './img/fallback.jpg';
@@ -18,7 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
       document.title = data.name;
       const contenedor = document.querySelector('.detalle-contenedor');
       const imagen = data.poster_path ? URL_IMG + data.poster_path : FALLBACK;
-      const generos = data.genres.map(g => g.name).join(', ');
+
+      // Reemplazo de .map por for tradicional
+      let generos = '';
+      for (let i = 0; i < data.genres.length; i++) {
+        generos += data.genres[i].name;
+        if (i < data.genres.length - 1) {
+          generos += ', ';
+        }
+      }
 
       contenedor.innerHTML = `
         <div class="poster-de-peli">
