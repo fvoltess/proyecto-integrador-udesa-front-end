@@ -96,13 +96,17 @@ img {
   font-size: 14.4px;
 }
 
+
 .boton_pelicula,.boton_serie {
   border-left: none;
   border-radius: 0; 
+  background-color: #555;
+  border: 1px solid #777;
 }
 
+
 .boton_serie:hover,.boton_pelicula:hover,.formulario-busqueda button:hover {
-  background-color: #c9302c;
+  background-color: #a84a47;
   transition: background-color 0.3s;
 }
 
@@ -540,3 +544,4 @@ button:hover, .tarjeta:hover, .poster-card:hover {
 input[type="radio"] {
   accent-color: #d9534f; /* Color del botón */
 }
+
