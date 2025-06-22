@@ -4,6 +4,10 @@
 
 This project was developed as part of the final assignment for the **Front-End Technologies** course at the **University of San Andrés**.
 
+## Live Demo
+
+👉 [https://fvoltess.github.io/proyecto-integrador-udesa-front-end/](https://fvoltess.github.io/proyecto-integrador-udesa-front-end/)
+
 ## Features
 
 - Search functionality for movies and series
