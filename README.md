@@ -21,7 +21,7 @@ This project was developed as part of the final assignment for the **Front-End T
 
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript
 - TMDB API
 
 ## Project Structure (Summary)
